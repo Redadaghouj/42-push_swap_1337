@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/06 12:21:45 by mdaghouj         ###   ########.fr       */
+/*   Created: 2024/10/25 23:13:39 by mdaghouj          #+#    #+#             */
+/*   Updated: 2025/02/06 11:32:57 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char *argv[])
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	int i;
-	int j;
+	t_stack	*ptr;
 
-	i = 1;
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{
-			if (argv[i][j] == ' ')
-				printf('found space\n');
-			j++;
-		}
-		i++;
-		// j = 0;
-		// while (argv[i][j] != '\0')
-		// {
-		// 	// if (argv[i][j] >= '0' && argv[i][j] <= '9')
-				
-		// 	// 5 "6" 8 -1 "9 7" " " 4-2 004
-		// }
-	}
-	return (0);
+	if (!lst)
+		return (NULL);
+	ptr = lst;
+	while (ptr->next != NULL)
+		ptr = ptr->next;
+	return (ptr);
 }

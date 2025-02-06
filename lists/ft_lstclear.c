@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/06 12:21:45 by mdaghouj         ###   ########.fr       */
+/*   Created: 2024/10/26 10:03:12 by mdaghouj          #+#    #+#             */
+/*   Updated: 2025/02/06 11:59:49 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char *argv[])
+void	ft_lstclear(t_stack **lst)
 {
-	int i;
-	int j;
+	t_stack	*ptr;
+	t_stack	*curr;
 
-	i = 1;
-	while (i < argc)
+	if (!lst)
+		return ;
+	ptr = *lst;
+	while (ptr != NULL)
 	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{
-			if (argv[i][j] == ' ')
-				printf('found space\n');
-			j++;
-		}
-		i++;
-		// j = 0;
-		// while (argv[i][j] != '\0')
-		// {
-		// 	// if (argv[i][j] >= '0' && argv[i][j] <= '9')
-				
-		// 	// 5 "6" 8 -1 "9 7" " " 4-2 004
-		// }
+		curr = ptr;
+		ptr = ptr->next;
+		free(curr);
 	}
-	return (0);
+	*lst = NULL;
 }

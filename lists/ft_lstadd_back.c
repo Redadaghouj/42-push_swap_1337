@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/06 12:21:45 by mdaghouj         ###   ########.fr       */
+/*   Created: 2024/10/25 23:25:49 by mdaghouj          #+#    #+#             */
+/*   Updated: 2025/02/06 11:31:01 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char *argv[])
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	int i;
-	int j;
+	t_stack	*last;
 
-	i = 1;
-	while (i < argc)
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
 	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{
-			if (argv[i][j] == ' ')
-				printf('found space\n');
-			j++;
-		}
-		i++;
-		// j = 0;
-		// while (argv[i][j] != '\0')
-		// {
-		// 	// if (argv[i][j] >= '0' && argv[i][j] <= '9')
-				
-		// 	// 5 "6" 8 -1 "9 7" " " 4-2 004
-		// }
+		last = ft_lstlast(*lst);
+		last->next = new;
 	}
-	return (0);
 }
