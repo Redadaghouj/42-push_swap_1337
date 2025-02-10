@@ -3,14 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
+/*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/09 23:53:46 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:26:48 by reda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	error_msg()
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
+int	is_space(char *str)
+{
+	while (*str)
+	{
+		if (*str == ' ')
+			return (0);
+		str++;
+	}
+	return (1);
+}
 
 int ft_count_word(int argc, char **argv)
 {
@@ -20,7 +37,8 @@ int ft_count_word(int argc, char **argv)
 	i = 0, len = 0;
 	while (i < argc)
 	{ // "5 9" " 7 " 8 
-		if (is_space(argv[i], ))
+		if (is_space(argv[i]))
+			error_msg();
 		j = 0;
 		while (argv[i][j])
 		{
@@ -39,8 +57,8 @@ int	main(int argc, char *argv[])
 	int len;
 
 	i = 1;
-	len = ft_count_word(argc - 1, argv[1]);
-	str = (char)malloc(sizeof(char) * len);
+	len = ft_count_word(argc - 1, ++argv);
+	str = (char *)malloc(sizeof(char) * len);
 	while (i < argc)
 	{
 		// str[i] = '';
