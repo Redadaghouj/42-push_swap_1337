@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/11 13:40:27 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/11 14:52:47 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ void	error_msg()
 	exit(1);
 }
 
-int	calc_spaces(char *str)
+int	is_only_spaces(char *str)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	while (*str)
+	i = 0;
+	while (str[i])
 	{
-		if (*str == ' ')
-			count++;
-		str++;
+		if (str[i] != ' ')
+			return (0);
+		i++;
 	}
-	return (count);
+	return (1);
 }
 
 int	is_digit(char *str)
@@ -59,7 +59,7 @@ int ft_count_args(int argc, char **argv)
 	i = 0;
 	while (argc > i)
 	{
-		if (argv[i][0] == '\0' || calc_spaces(argv[i]) == ft_strlen(argv[i]) || !is_digit(argv[i]))
+		if (argv[i][0] == '\0' || is_only_spaces(argv[i]) || !is_digit(argv[i]))
 			error_msg();
 		buffer = ft_split(argv[i], ' ');
 		if (!buffer)
