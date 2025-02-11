@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 21:39:56 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/06 11:32:46 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/11 13:35:42 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	skip_isspace(const char *nptr)
 	int	i;
 
 	i = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+	while (nptr[i] == ' ')
 		i++;
 	return (i);
 }
@@ -37,8 +37,8 @@ int	ft_atoi(const char *nptr)
 {
 	int		i;
 	int		sign;
-	long	res;
-	long	prev_res;	
+	int	res;
+	int	prev_res;	
 
 	i = skip_isspace(nptr);
 	sign = 1;
@@ -48,10 +48,10 @@ int	ft_atoi(const char *nptr)
 	{
 		prev_res = res;
 		res = res * 10 + (nptr[i] - '0');
-		if (sign == 1 && prev_res > res)
-			return (-1);
-		else if (sign == -1 && prev_res > res)
-			return (0);
+		if (prev_res > res)
+			error_msg();
+		// else if (sign == -1 && prev_res > res)
+		// 	error_msg();
 		i++;
 	}
 	return (res * sign);

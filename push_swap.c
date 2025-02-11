@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/10 16:26:48 by reda             ###   ########.fr       */
+/*   Updated: 2025/02/11 13:40:27 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,51 +18,129 @@ void	error_msg()
 	exit(1);
 }
 
-int	is_space(char *str)
+int	calc_spaces(char *str)
 {
+	int	count;
+
+	count = 0;
 	while (*str)
 	{
 		if (*str == ' ')
-			return (0);
+			count++;
 		str++;
+	}
+	return (count);
+}
+
+int	is_digit(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i])
+	{
+		if (!(str[i] >= '0' && str[i] <= '9') && str[i] != ' ')
+			return 0;
+		i++;
 	}
 	return (1);
 }
 
-int ft_count_word(int argc, char **argv)
+int ft_count_args(int argc, char **argv)
 {
-	int len;
-	int i, j;
+	char	**buffer;
+	int		count;
+	int		i;
+	int		j;
 
-	i = 0, len = 0;
-	while (i < argc)
-	{ // "5 9" " 7 " 8 
-		if (is_space(argv[i]))
+	count = 0;
+	i = 0;
+	while (argc > i)
+	{
+		if (argv[i][0] == '\0' || calc_spaces(argv[i]) == ft_strlen(argv[i]) || !is_digit(argv[i]))
+			error_msg();
+		buffer = ft_split(argv[i], ' ');
+		if (!buffer)
 			error_msg();
 		j = 0;
-		while (argv[i][j])
+		while (buffer[j] != NULL)
 		{
-			len++;
+			count++;
+			j++;
+		}
+		free_buffer(buffer, j);
+		i++;
+	}
+	return (count);
+}
+
+void	check_duplicated(int *nums, int len)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < len)
+	{
+		j = i + 1;
+		while (j < len)
+		{
+			if (nums[i] == nums[j])
+				error_msg();
 			j++;
 		}
 		i++;
-		len++;
+	}
+}
+
+int	*parse_int_array(int len, int argc, char *argv[])
+{
+	char	**buffer;
+	int		*nums;
+	int		i;
+	int		j;
+	int		k;
+
+	i = 0;
+	k = 0;
+	nums = (int *)malloc(sizeof(int) * len);
+	if (!nums)
+		error_msg();
+	while (argc > i)
+	{
+		j = 0;
+		buffer = ft_split(argv[i], ' ');
+		if (!buffer)
+			error_msg();
+		while (buffer[j] != NULL)
+			nums[k++] = ft_atoi(buffer[j++]);
+		free_buffer(buffer, j);
+		i++;
+	}
+	check_duplicated(nums, len);
+	return (nums);
+}
+
+void	print_array(int *nums, int len)
+{
+	int i = 0;
+	while (i < len)
+	{
+		printf("%d\n", nums[i]);
+		i++;
 	}
 }
 
 int	main(int argc, char *argv[])
 {
-	int i; // "6 8  "
-	char *str;
+	int	*nums;
 	int len;
 
-	i = 1;
-	len = ft_count_word(argc - 1, ++argv);
-	str = (char *)malloc(sizeof(char) * len);
-	while (i < argc)
-	{
-		// str[i] = '';
-	}
+	len = ft_count_args(argc - 1, argv + 1);
+	nums = parse_int_array(len, argc - 1, argv + 1);
+	// create nodes and add it to the stack
 	return (0);
 }
 
