@@ -7,7 +7,7 @@ AR := ar rcs
 
 RM := rm -f
 
-SRCS := push_swap.c utils/ft_split.c utils/ft_strlen.c utils/ft_atoi.c
+SRCS := push_swap.c utils/ft_split.c utils/ft_strlen.c utils/ft_atoi.c parsing_utils.c parsing.c
 
 OBJ := ${SRCS:.c=.o}
 
