@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
+/*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:55:04 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/13 15:39:29 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/13 23:52:21 by reda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,15 @@ int ft_count_args(int argc, char **argv)
 	return (count);
 }
 
-int	*parse_int_array(int len, int argc, char *argv[])
+void	parse_int_array(int len, int argc, char *argv[], int *nums)
 {
 	char	**buffer;
-	int		*nums;
 	int		i;
 	int		j;
 	int		k;
 
 	i = 0;
 	k = 0;
-	nums = (int *)malloc(sizeof(int) * len);
-	if (!nums)
-		error_msg();
 	while (argc > i)
 	{
 		j = 0;
@@ -65,5 +61,4 @@ int	*parse_int_array(int len, int argc, char *argv[])
 		i++;
 	}
 	check_duplicated(nums, len);
-	return (nums);
 }

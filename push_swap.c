@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
+/*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/13 16:24:46 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/13 23:52:56 by reda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ void	error_msg()
 
 void	push_num_to_stack(int num, t_stack **stack_a)
 {
-	puts("hay");
 	t_stack *node;
 
 	node = ft_lstnew(num);
+	if (!node)
+		error_msg();
 	ft_lstadd_front(stack_a, node);
 }
 
@@ -31,10 +32,13 @@ void	load_stack(int *nums, int len, t_stack **stack_a)
 {
 	int	i;
 
-	i = -1;
-	while (++i < len)
+	i = 0;
+	while (i < len)
+	{
 		push_num_to_stack(nums[i], stack_a);
-	// print_list(*stack_a);
+		i++;
+	}
+	print_list(*stack_a);
 }
 
 void print_list(t_stack *stack_a)
@@ -58,7 +62,10 @@ int	main(int argc, char *argv[])
 	if (argc == 1)
 		return (0);
 	len = ft_count_args(argc - 1, argv + 1);
-	nums = parse_int_array(len, argc - 1, argv + 1);
+	nums = (int *)malloc(sizeof(int) * len);
+	if (!nums)
+		error_msg();
+	parse_int_array(len, argc - 1, argv + 1, nums);
 	load_stack(nums, len, &stack_a);
 	return (0);
 }
