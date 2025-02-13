@@ -6,13 +6,13 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 11:17:44 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/12 16:06:19 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/13 16:22:13 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*ft_lstnew(int *value)
+t_stack	*ft_lstnew(int value)
 {
 	t_stack	*node;
 

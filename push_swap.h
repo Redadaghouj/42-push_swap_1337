@@ -23,6 +23,8 @@ void		check_duplicated(int *nums, int len);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		ft_lstclear(t_stack **lst);
 t_stack		*ft_lstlast(t_stack *lst);
-t_stack		*ft_lstnew(int *value);
+t_stack		*ft_lstnew(int value);
+void		ft_lstadd_front(t_stack **lst, t_stack *new);
+void		print_list(t_stack *stack_a);
 
 #endif
