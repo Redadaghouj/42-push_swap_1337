@@ -26,5 +26,5 @@ t_stack		*ft_lstlast(t_stack *lst);
 t_stack		*ft_lstnew(int value);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		print_list(t_stack *stack_a);
-
+void		sa(t_stack **stack_a);
 #endif

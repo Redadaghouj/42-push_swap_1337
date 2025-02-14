@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/13 23:52:56 by reda             ###   ########.fr       */
+/*   Updated: 2025/02/14 15:11:14 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ void	load_stack(int *nums, int len, t_stack **stack_a)
 
 	i = 0;
 	while (i < len)
-	{
-		push_num_to_stack(nums[i], stack_a);
-		i++;
-	}
+		push_num_to_stack(nums[i++], stack_a);
 	print_list(*stack_a);
 }
 
@@ -67,6 +64,9 @@ int	main(int argc, char *argv[])
 		error_msg();
 	parse_int_array(len, argc - 1, argv + 1, nums);
 	load_stack(nums, len, &stack_a);
+	sa(&stack_a);
+	printf("-----------\n");
+	print_list(stack_a);
 	return (0);
 }
 

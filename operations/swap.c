@@ -6,12 +6,18 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:32:27 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/05 10:40:10 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/14 15:17:50 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	sa()
-{}
+#include "../push_swap.h"
+
+void	sa(t_stack **stack_a)
+{
+    // 8 -> 7 -> 9 -> 5 ----> 7 -> 8 -> 9 -> 5
+    // 
+    printf("--%d--\n", (*stack_a)->data);
+}
 void	sb()
 {}
 
