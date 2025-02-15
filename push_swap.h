@@ -9,7 +9,6 @@
 typedef struct s_stack
 {
 	int data;
-	int index;
 	struct s_stack *next;
 } t_stack;
 
@@ -24,7 +23,14 @@ void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		ft_lstclear(t_stack **lst);
 t_stack		*ft_lstlast(t_stack *lst);
 t_stack		*ft_lstnew(int value);
-void		ft_lstadd_front(t_stack **lst, t_stack *new);
+void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		print_list(t_stack *stack_a);
+int			swap(t_stack **stack);
+void		ft_putstr_fd(char *str, int fd);
 void		sa(t_stack **stack_a);
+void		sb(t_stack **stack_b);
+void		ss(t_stack **stack_a, t_stack **stack_b);
+void		pb(t_stack **stack_a, t_stack **stack_b);
+void		pa(t_stack **stack_a, t_stack **stack_b);
+
 #endif

@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 11:17:44 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 11:17:04 by mdaghouj         ###   ########.fr       */
+/*   Created: 2025/02/15 13:10:05 by mdaghouj          #+#    #+#             */
+/*   Updated: 2025/02/15 13:17:45 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../push_swap.h"
 
-t_stack	*ft_lstnew(int value)
+void	ft_putstr_fd(char *str, int fd)
 {
-	t_stack	*node;
-
-	node = (t_stack *) malloc(sizeof(t_stack));
-	if (!node)
-		return (NULL);
-	node->data = value;
-	node->next = NULL;
-	return (node);
+	write(fd, str, ft_strlen(str));
 }

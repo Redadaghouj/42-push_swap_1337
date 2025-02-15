@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/14 15:11:14 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/15 13:56:07 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error_msg()
 {
-	write(2, "Error\n", 6);
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
 
@@ -25,7 +25,7 @@ void	push_num_to_stack(int num, t_stack **stack_a)
 	node = ft_lstnew(num);
 	if (!node)
 		error_msg();
-	ft_lstadd_front(stack_a, node);
+	ft_lstadd_back(stack_a, node);
 }
 
 void	load_stack(int *nums, int len, t_stack **stack_a)
@@ -35,7 +35,6 @@ void	load_stack(int *nums, int len, t_stack **stack_a)
 	i = 0;
 	while (i < len)
 		push_num_to_stack(nums[i++], stack_a);
-	print_list(*stack_a);
 }
 
 void print_list(t_stack *stack_a)
@@ -64,9 +63,10 @@ int	main(int argc, char *argv[])
 		error_msg();
 	parse_int_array(len, argc - 1, argv + 1, nums);
 	load_stack(nums, len, &stack_a);
-	sa(&stack_a);
-	printf("-----------\n");
+	pb(stack_a, stack_b);
 	print_list(stack_a);
+	printf("-----------\n");
+	print_list(stack_b);
 	return (0);
 }
 
