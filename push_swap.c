@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 16:00:50 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/15 17:12:49 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ int	main(int argc, char *argv[])
 		error_msg();
 	parse_int_array(len, argc - 1, argv + 1, nums);
 	load_stack(nums, len, &stack_a);
-	print_list(stack_a);
-	ra(&stack_a);
-	print_list(stack_a);
+	// print_list(stack_a);
+	// rra(&stack_a);
+	// print_list(stack_a);
 	return (0);
 }
 

@@ -19,11 +19,11 @@ int			ft_count_args(int argc, char **argv);
 int			is_only_spaces(char *str);
 int			is_digit(char *str);
 void		check_duplicated(int *nums, int len);
-void		ft_lstadd_front(t_stack **lst, t_stack *new);
+void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstclear(t_stack **lst);
 t_stack		*ft_lstlast(t_stack *lst);
 t_stack		*ft_lstnew(int value);
-void		ft_lstadd_back(t_stack **lst, t_stack *new);
+t_stack		*ft_lstbefore_last(t_stack *lst);
 void		print_list(t_stack *stack_a);
 int			swap(t_stack **stack);
 void		ft_putstr_fd(char *str, int fd);
@@ -35,5 +35,8 @@ void		pa(t_stack **stack_a, t_stack **stack_b);
 void		ra(t_stack **stack_a);
 void		rb(t_stack **stack_b);
 void		rr(t_stack **stack_a, t_stack **stack_b);
+void		rra(t_stack **stack_a);
+void		rrb(t_stack **stack_b);
+void		rrr(t_stack **stack_a, t_stack **stack_b);
 
 #endif
