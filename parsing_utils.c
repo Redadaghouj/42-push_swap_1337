@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:55:00 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/13 20:50:18 by reda             ###   ########.fr       */
+/*   Updated: 2025/02/15 17:26:21 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ int	is_digit(char *str)
 				return (0);
 			i++;
 		}
-		if (!(str[i] >= '0' && str[i] <= '9') && str[i] != ' ' && str[i] != '\0')
-			return 0;
+		if (!(str[i] >= '0' && str[i] <= '9') && str[i] != ' '
+			&& str[i] != '\0')
+			return (0);
 		i++;
 	}
 	return (1);

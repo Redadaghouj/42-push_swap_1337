@@ -6,11 +6,11 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 22:14:44 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/11 11:20:42 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/15 17:33:21 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 21:39:56 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/11 13:35:42 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/15 17:32:54 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	ft_atoi(const char *nptr)
 {
 	int		i;
 	int		sign;
-	int	res;
-	int	prev_res;	
+	int		res;
+	int		prev_res;	
 
 	i = skip_isspace(nptr);
 	sign = 1;
@@ -50,8 +50,6 @@ int	ft_atoi(const char *nptr)
 		res = res * 10 + (nptr[i] - '0');
 		if (prev_res > res)
 			error_msg();
-		// else if (sign == -1 && prev_res > res)
-		// 	error_msg();
 		i++;
 	}
 	return (res * sign);

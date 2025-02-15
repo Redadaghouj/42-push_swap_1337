@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:37:07 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 15:37:56 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/15 17:30:22 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	push(t_stack **from, t_stack **to)
 {
-	t_stack *ptr;
+	t_stack	*ptr;
 
 	if (!*from)
 		return (0);
@@ -24,6 +24,7 @@ int	push(t_stack **from, t_stack **to)
 	*to = ptr;
 	return (1);
 }
+
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	if (push(stack_b, stack_a))
@@ -32,6 +33,6 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
-		if (push(stack_a, stack_b))
-			ft_putstr_fd("pb\n", 1);
+	if (push(stack_a, stack_b))
+		ft_putstr_fd("pb\n", 1);
 }

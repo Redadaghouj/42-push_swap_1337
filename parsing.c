@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:55:04 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/13 23:52:21 by reda             ###   ########.fr       */
+/*   Updated: 2025/02/15 17:25:38 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_count_args(int argc, char **argv)
+int	ft_count_args(int argc, char **argv)
 {
 	char	**buffer;
 	int		count;

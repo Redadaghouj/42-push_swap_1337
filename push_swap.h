@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
+/*   Updated: 2025/02/15 17:28:29 by mdaghouj         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -8,9 +20,9 @@
 
 typedef struct s_stack
 {
-	int data;
-	struct s_stack *next;
-} t_stack;
+	int				data;
+	struct s_stack	*next;
+}					t_stack;
 
 char		**ft_split(char const *s, char c);
 void		*free_buffer(char **buffer, int len);
@@ -38,5 +50,6 @@ void		rr(t_stack **stack_a, t_stack **stack_b);
 void		rra(t_stack **stack_a);
 void		rrb(t_stack **stack_b);
 void		rrr(t_stack **stack_a, t_stack **stack_b);
+int			is_sorted(int *nums, int len);
 
 #endif
