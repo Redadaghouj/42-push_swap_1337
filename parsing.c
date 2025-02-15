@@ -6,59 +6,34 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:55:04 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 17:25:38 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/15 21:00:22 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_count_args(int argc, char **argv)
+void	load_stack(int argc, char *argv[], t_stack **stack)
 {
 	char	**buffer;
-	int		count;
 	int		i;
 	int		j;
 
-	count = 0;
 	i = 0;
 	while (argc > i)
 	{
+		j = 0;
 		if (argv[i][0] == '\0' || is_only_spaces(argv[i]) || !is_digit(argv[i]))
-			error_msg();
-		buffer = ft_split(argv[i], ' ');
-		if (!buffer)
-			error_msg();
-		j = 0;
-		while (buffer[j] != NULL)
 		{
-			count++;
-			j++;
+			ft_lstclear(stack);
+			error_msg();
 		}
-		free_buffer(buffer, j);
-		i++;
-	}
-	return (count);
-}
-
-void	parse_int_array(int len, int argc, char *argv[], int *nums)
-{
-	char	**buffer;
-	int		i;
-	int		j;
-	int		k;
-
-	i = 0;
-	k = 0;
-	while (argc > i)
-	{
-		j = 0;
 		buffer = ft_split(argv[i], ' ');
 		if (!buffer)
 			error_msg();
 		while (buffer[j] != NULL)
-			nums[k++] = ft_atoi(buffer[j++]);
+			push_num_to_stack(ft_atoi(buffer[j++]), stack);
 		free_buffer(buffer, j);
 		i++;
 	}
-	check_duplicated(nums, len);
+	check_duplicated(*stack);
 }

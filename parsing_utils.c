@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:55:00 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 17:26:21 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/15 20:20:41 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,19 @@ int	is_digit(char *str)
 	return (1);
 }
 
-void	check_duplicated(int *nums, int len)
+void	check_duplicated(t_stack *stack)
 {
-	int	i;
-	int	j;
+	t_stack *iterate;
 
-	i = 0;
-	while (i < len)
+	while (stack != NULL)
 	{
-		j = i + 1;
-		while (j < len)
+		iterate = stack->next;
+		while (iterate != NULL)
 		{
-			if (nums[i] == nums[j])
+			if (stack->data == iterate->data)
 				error_msg();
-			j++;
+			iterate = iterate->next;
 		}
-		i++;
+		stack = stack->next;
 	}
 }

@@ -6,22 +6,19 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:14:54 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 20:05:05 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/15 21:49:45 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sorted(int *nums, int len)
+int	is_sorted(t_stack *stack)
 {
-	int	i;
-
-	i = 0;
-	while (i < len - 1)
+	while (stack->next != NULL)
 	{
-		if (nums[i] > nums[i + 1])
+		if (stack->data > stack->next->data)
 			return (0);
-		i++;
+		stack = stack->next;
 	}
 	return (1);
 }

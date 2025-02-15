@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_alg.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 18:15:21 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 21:50:26 by mdaghouj         ###   ########.fr       */
+/*   Created: 2024/10/25 23:06:00 by mdaghouj          #+#    #+#             */
+/*   Updated: 2025/02/15 21:05:20 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	sort_three(t_stack **stack)
+int	ft_lstsize(t_stack *lst)
 {
-	int		idx;
+	int		i;
 
-	idx = get_biggest_idx(*stack);
-	if (is_sorted(*stack))
-		return ;
-	if (idx == 3)
-		sa(stack);
-	else if (idx == 1)
+	i = 0;
+	while (lst != NULL)
 	{
-		ra(stack);
-		sort_three(stack);
+		i++;
+		lst = lst->next;
 	}
-	else
-	{
-		rra(stack);
-		sort_three(stack);
-	}
+	return (i);
 }
-
-	// ra		sa
-	// 3 2 1 -> 2 1 3 -> 1 2 3
-	// 3 1 2 -> 1 2 3
-	// sa
-	// 2 1 3 -> 1 2 3 ✅
-	// rra		sa
-	// 1 3 2 -> 2 1 3 -> 1 2 3
-	// 2 3 1 -> 1 2 3
