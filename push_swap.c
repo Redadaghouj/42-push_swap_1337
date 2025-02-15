@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 17:27:32 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/15 20:07:09 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,11 @@ int	main(int argc, char *argv[])
 	if (is_sorted(nums, len))
 		return (0);
 	load_stack(nums, len, &stack_a);
-	// print_list(stack_a);
+	if (len == 2)
+		sa(&stack_a);
+	if (len == 3)
+		sort_three(&stack_a);
+	print_list(stack_a);
 	// rra(&stack_a);
 	// print_list(stack_a);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 17:28:29 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/15 20:08:26 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,8 @@ void		rra(t_stack **stack_a);
 void		rrb(t_stack **stack_b);
 void		rrr(t_stack **stack_a, t_stack **stack_b);
 int			is_sorted(int *nums, int len);
+void		sort_three(t_stack **stack);
+int			get_biggest_idx(t_stack *stack);
+void		parse_int_array(int len, int argc, char *argv[], int *nums);
 
 #endif
