@@ -6,11 +6,68 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:55:04 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 21:00:22 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/16 12:43:46 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	is_only_spaces(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	is_digit(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '-' || str[i] == '+')
+		{
+			if ((i - 1) != -1 && str[i - 1] != ' ')
+				return (0);
+			i++;
+		}
+		if (!(str[i] >= '0' && str[i] <= '9') && str[i] != ' '
+			&& str[i] != '\0')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+void	check_duplicated(t_stack **stack)
+{
+	t_stack	*iterate;
+	t_stack	*ptr;
+
+	ptr = *stack;
+	while (ptr != NULL)
+	{
+		iterate = ptr->next;
+		while (iterate != NULL)
+		{
+			if (ptr->data == iterate->data)
+			{
+				ft_lstclear(stack);
+				error_msg();
+			}
+			iterate = iterate->next;
+		}
+		ptr = ptr->next;
+	}
+}
 
 void	load_stack(int argc, char *argv[], t_stack **stack)
 {
@@ -29,11 +86,14 @@ void	load_stack(int argc, char *argv[], t_stack **stack)
 		}
 		buffer = ft_split(argv[i], ' ');
 		if (!buffer)
+		{
+			ft_lstclear(stack);
 			error_msg();
+		}
 		while (buffer[j] != NULL)
 			push_num_to_stack(ft_atoi(buffer[j++]), stack);
 		free_buffer(buffer, j);
 		i++;
 	}
-	check_duplicated(*stack);
+	check_duplicated(stack);
 }

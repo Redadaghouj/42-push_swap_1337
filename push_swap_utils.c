@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:14:54 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 21:49:45 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/16 12:43:30 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,31 @@ int	is_sorted(t_stack *stack)
 	}
 	return (1);
 }
-int	get_biggest_idx(t_stack *stack)
-{
-	int	max;
-	int	i;
-	int	idx;
 
-	max = stack->data;
-	i = 1;
-	idx = 1;
+t_stack	*get_minimum(t_stack *stack)
+{
+	t_stack	*min;
+
+	min = stack;
 	while (stack != NULL)
 	{
-		if (stack->data > max)
-		{
-			max = stack->data;
-			idx = i;
-		}
-		i++;
+		if (stack->data < min->data)
+			min = stack;
 		stack = stack->next;
 	}
-	return (idx);
+	return (min);
+}
+
+t_stack	*get_biggest(t_stack *stack)
+{
+	t_stack	*max;
+
+	max = stack;
+	while (stack != NULL)
+	{
+		if (stack->data > max->data)
+			max = stack;
+		stack = stack->next;
+	}
+	return (max);
 }

@@ -6,38 +6,73 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 18:15:21 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 21:50:26 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/16 12:44:00 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_stack **stack)
+void	move_min_to_top(t_stack **stack)
 {
-	int		idx;
+	t_stack	*min;
 
-	idx = get_biggest_idx(*stack);
-	if (is_sorted(*stack))
-		return ;
-	if (idx == 3)
-		sa(stack);
-	else if (idx == 1)
+	min = get_minimum(*stack);
+	while (min != *stack)
 	{
-		ra(stack);
-		sort_three(stack);
-	}
-	else
-	{
-		rra(stack);
-		sort_three(stack);
+		if (min->next == NULL)
+			rra(stack);
+		else if (min->next->next == NULL)
+			rra(stack);
+		else
+			ra(stack);
 	}
 }
 
-	// ra		sa
-	// 3 2 1 -> 2 1 3 -> 1 2 3
-	// 3 1 2 -> 1 2 3
-	// sa
-	// 2 1 3 -> 1 2 3 ✅
-	// rra		sa
-	// 1 3 2 -> 2 1 3 -> 1 2 3
-	// 2 3 1 -> 1 2 3
+void	sort_three(t_stack **stack)
+{
+	t_stack	*biggest;
+
+	biggest = get_biggest(*stack);
+	while (!is_sorted(*stack))
+	{
+		if (biggest->next == NULL)
+			sa(stack);
+		else if (biggest->next->next == NULL)
+			rra(stack);
+		else
+			ra(stack);
+	}
+}
+
+void	sort_four(t_stack **stack_a, t_stack **stack_b)
+{
+	move_min_to_top(stack_a);
+	pb(stack_a, stack_b);
+	sort_three(stack_a);
+	pa(stack_a, stack_b);
+}
+
+void	sort_five(t_stack **stack_a, t_stack **stack_b)
+{
+	move_min_to_top(stack_a);
+	pb(stack_a, stack_b);
+	sort_four(stack_a, stack_b);
+	pa(stack_a, stack_b);
+}
+
+void	sort_stack(t_stack **stack_a, t_stack **stack_b)
+{
+	int	len;
+
+	len = ft_lstsize(*stack_a);
+	if (len == 2)
+		sa(stack_a);
+	else if (len == 3)
+		sort_three(stack_a);
+	else if (len == 4)
+		sort_four(stack_a, stack_b);
+	else if (len == 5)
+		sort_five(stack_a, stack_b);
+	else
+		puts("Best move");
+}

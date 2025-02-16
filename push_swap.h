@@ -6,17 +6,17 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 21:03:32 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/16 12:44:45 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdio.h> //-REMOVE-
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h> // CHECK: if i use it
+# include <stdio.h> //-REMOVE-
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h> // CHECK: if i use it
 
 typedef struct s_stack
 {
@@ -53,8 +53,13 @@ void		rrb(t_stack **stack_b);
 void		rrr(t_stack **stack_a, t_stack **stack_b);
 int			is_sorted(t_stack *stack);
 void		sort_three(t_stack **stack);
-int			get_biggest_idx(t_stack *stack);
+void		sort_four(t_stack **stack_a, t_stack **stack_b);
+void		sort_five(t_stack **stack_a, t_stack **stack_b);
+t_stack		*get_minimum(t_stack *stack);
+t_stack		*get_biggest(t_stack *stack);
 void		load_stack(int argc, char *argv[], t_stack **stack);
 void		push_num_to_stack(int num, t_stack **stack_a);
+void		move_min_to_top(t_stack **stack);
+void		sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 21:03:51 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/16 12:41:23 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	print_list(t_stack *stack_a)
 
 int	main(int argc, char *argv[])
 {
-	int		len;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
@@ -51,13 +50,12 @@ int	main(int argc, char *argv[])
 	if (argc == 1)
 		return (0);
 	load_stack(argc - 1, argv + 1, &stack_a);
-	len = ft_lstsize(stack_a);
 	if (is_sorted(stack_a))
+	{
+		ft_lstclear(stack_a);
 		return (0);
-	if (len == 2)
-		sa(&stack_a);
-	if (len == 3)
-		sort_three(&stack_a);
+	}
+	sort_stack(&stack_a, &stack_b);
 	print_list(stack_a);
 	return (0);
 }
