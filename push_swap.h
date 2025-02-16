@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/16 15:39:57 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/16 21:18:07 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h> // CHECK: if i use it
+# include "bonus/gnl/get_next_line.h"
 
 typedef struct s_stack
 {
@@ -27,10 +28,9 @@ typedef struct s_stack
 char		**ft_split(char const *s, char c);
 void		*free_buffer(char **buffer, int len);
 int			ft_strlen(const char *s);
-int			ft_count_args(int argc, char **argv);
 int			is_only_spaces(char *str);
 int			is_digit(char *str);
-void		check_duplicated(t_stack *stack);
+void		check_duplicated(t_stack **stack);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstclear(t_stack **lst);
 int			ft_lstsize(t_stack *lst);
