@@ -6,11 +6,17 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:14:54 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/16 12:43:30 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/16 15:39:31 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_and_exit(t_stack **stack)
+{
+	ft_lstclear(stack);
+	error_msg();
+}
 
 int	is_sorted(t_stack *stack)
 {

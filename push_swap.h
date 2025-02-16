@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/16 12:44:45 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/16 15:39:57 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void		load_stack(int argc, char *argv[], t_stack **stack);
 void		push_num_to_stack(int num, t_stack **stack_a);
 void		move_min_to_top(t_stack **stack);
 void		sort_stack(t_stack **stack_a, t_stack **stack_b);
+void		free_and_exit(t_stack **stack);
 
 #endif

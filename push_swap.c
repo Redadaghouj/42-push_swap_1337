@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/16 12:41:23 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/16 15:40:07 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ void	push_num_to_stack(int num, t_stack **stack_a)
 
 	node = ft_lstnew(num);
 	if (!node)
-	{
-		ft_lstclear(stack_a);
-		error_msg();
-	}
+		free_and_exit(stack_a);
 	ft_lstadd_back(stack_a, node);
 }
 
