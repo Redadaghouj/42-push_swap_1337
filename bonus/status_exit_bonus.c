@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 17:12:00 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 17:12:48 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:44:24 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ void	result_msg(char *msg, int fd, int exit_code)
 	exit(exit_code);
 }
 
-void    failure_exit(t_stack **stack_a, t_stack **stack_b)
+void	failure_exit(t_stack **stack_a, t_stack **stack_b)
 {
 	if (*stack_b)
 		ft_lstclear(stack_b);
 	ft_lstclear(stack_a);
-    result_msg("KO\n", 2, 1);
+	result_msg("KO\n", 2, 1);
 }
 
-void    success_exit(t_stack **stack_a, t_stack **stack_b)
+void	success_exit(t_stack **stack_a, t_stack **stack_b)
 {
 	if (*stack_b)
 		ft_lstclear(stack_b);
 	ft_lstclear(stack_a);
-    result_msg("OK\n", 1, 0);
+	result_msg("OK\n", 1, 0);
 }

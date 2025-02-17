@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 17:28:58 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:48:30 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct s_stack
 
 char		**ft_split(char const *s, char c);
 void		*free_buffer(char **buffer, int len);
-// int			ft_strlen(const char *s);
 int			is_only_spaces(char *str);
 int			is_digit(char *str);
 void		check_duplicated(t_stack **stack);
@@ -37,7 +36,6 @@ int			ft_lstsize(t_stack *lst);
 t_stack		*ft_lstlast(t_stack *lst);
 t_stack		*ft_lstnew(int value);
 t_stack		*ft_lstbefore_last(t_stack *lst);
-void		print_list(t_stack *stack_a);
 int			swap(t_stack **stack);
 void		ft_putstr_fd(char *str, int fd);
 void		sa(t_stack **stack_a);
@@ -60,7 +58,7 @@ void		move_min_to_top(t_stack **stack);
 void		free_and_exit(t_stack **stack);
 void		error_msg(void);
 int			ft_atoi(const char *nptr);
-void		apply_operations(t_stack **stack_a, t_stack **stack_b, char *operation);
+void		apply_operations(t_stack **stack_a, t_stack **stack_b, char *opr);
 int			is_sorted_bonus(t_stack *stack_a, t_stack *stack_b);
 void		failure_exit(t_stack **stack_a, t_stack **stack_b);
 void		success_exit(t_stack **stack_a, t_stack **stack_b);

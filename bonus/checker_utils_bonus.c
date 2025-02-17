@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:14:54 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 17:15:25 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:47:41 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ t_stack	*get_biggest(t_stack *stack)
 	}
 	return (max);
 }
+
 void	move_min_to_top(t_stack **stack)
 {
 	t_stack	*min;

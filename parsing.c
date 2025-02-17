@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:55:04 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/16 15:41:03 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:47:05 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,10 @@ void	load_stack(int argc, char *argv[], t_stack **stack)
 	{
 		j = 0;
 		if (argv[i][0] == '\0' || is_only_spaces(argv[i]) || !is_digit(argv[i]))
-				free_and_exit(stack);
+			free_and_exit(stack);
 		buffer = ft_split(argv[i], ' ');
 		if (!buffer)
-				free_and_exit(stack);
+			free_and_exit(stack);
 		while (buffer[j] != NULL)
 			push_num_to_stack(ft_atoi(buffer[j++]), stack);
 		free_buffer(buffer, j);

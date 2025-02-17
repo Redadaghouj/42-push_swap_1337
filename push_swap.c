@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 13:22:57 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:49:02 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	push_num_to_stack(int num, t_stack **stack_a)
 	ft_lstadd_back(stack_a, node);
 }
 
-void	print_list(t_stack *stack_a) // -REMOVE-
+// -REMOVE-
+void	print_list(t_stack *stack_a)
 {
 	while (stack_a != NULL)
 	{
