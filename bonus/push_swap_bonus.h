@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 17:28:50 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 17:28:58 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include <stdio.h> //-REMOVE-
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h> // CHECK: if i use it
+# include "gnl_bonus/get_next_line_bonus.h"
 
 typedef struct s_stack
 {
@@ -26,7 +27,7 @@ typedef struct s_stack
 
 char		**ft_split(char const *s, char c);
 void		*free_buffer(char **buffer, int len);
-int			ft_strlen(const char *s);
+// int			ft_strlen(const char *s);
 int			is_only_spaces(char *str);
 int			is_digit(char *str);
 void		check_duplicated(t_stack **stack);
@@ -51,17 +52,18 @@ void		rra(t_stack **stack_a);
 void		rrb(t_stack **stack_b);
 void		rrr(t_stack **stack_a, t_stack **stack_b);
 int			is_sorted(t_stack *stack);
-void		sort_three(t_stack **stack);
-void		sort_four(t_stack **stack_a, t_stack **stack_b);
-void		sort_five(t_stack **stack_a, t_stack **stack_b);
 t_stack		*get_minimum(t_stack *stack);
 t_stack		*get_biggest(t_stack *stack);
 void		load_stack(int argc, char *argv[], t_stack **stack);
 void		push_num_to_stack(int num, t_stack **stack_a);
 void		move_min_to_top(t_stack **stack);
-void		sort_stack(t_stack **stack_a, t_stack **stack_b);
 void		free_and_exit(t_stack **stack);
 void		error_msg(void);
 int			ft_atoi(const char *nptr);
+void		apply_operations(t_stack **stack_a, t_stack **stack_b, char *operation);
+int			is_sorted_bonus(t_stack *stack_a, t_stack *stack_b);
+void		failure_exit(t_stack **stack_a, t_stack **stack_b);
+void		success_exit(t_stack **stack_a, t_stack **stack_b);
+int			ft_strcmp(char *s1, char *s2);
 
 #endif

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   reverse_rotate_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:38:25 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 11:47:24 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 12:57:39 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
 int	reverse_rotate(t_stack **stack)
 {
@@ -29,14 +29,12 @@ int	reverse_rotate(t_stack **stack)
 
 void	rra(t_stack **stack_a)
 {
-	if (reverse_rotate(stack_a))
-		ft_putstr_fd("rra\n", 1);
+	reverse_rotate(stack_a);
 }
 
 void	rrb(t_stack **stack_b)
 {
-	if (reverse_rotate(stack_b))
-		ft_putstr_fd("rrb\n", 1);
+	reverse_rotate(stack_b);
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)

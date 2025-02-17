@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 10:32:27 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 11:47:41 by mdaghouj         ###   ########.fr       */
+/*   Created: 2025/02/05 10:37:07 by mdaghouj          #+#    #+#             */
+/*   Updated: 2025/02/17 12:57:17 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
-int	swap(t_stack **stack)
+int	push(t_stack **from, t_stack **to)
 {
-	int	tmp;
+	t_stack	*ptr;
 
-	if (!(*stack)->next)
+	if (!*from)
 		return (0);
-	tmp = (*stack)->data;
-	(*stack)->data = (*stack)->next->data;
-	(*stack)->next->data = tmp;
+	ptr = *from;
+	*from = (*from)->next;
+	ptr->next = *to;
+	*to = ptr;
 	return (1);
 }
 
-void	sa(t_stack **stack_a)
+void	pa(t_stack **stack_a, t_stack **stack_b)
 {
-	if (swap(stack_a))
-		ft_putstr_fd("sa\n", 1);
+	push(stack_b, stack_a);
 }
 
-void	sb(t_stack **stack_b)
+void	pb(t_stack **stack_a, t_stack **stack_b)
 {
-	if (swap(stack_b))
-		ft_putstr_fd("sb\n", 1);
-}
-
-void	ss(t_stack **stack_a, t_stack **stack_b)
-{
-	sa(stack_a);
-	sb(stack_b);
+	push(stack_a, stack_b);
 }

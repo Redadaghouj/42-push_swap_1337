@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:24:27 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/16 21:21:57 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 17:05:25 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # endif
 
 char	*get_next_line(int fd);
-// int 	ft_strlen(const char *s);
+size_t  ft_strlen(const char *s);
 int		check_line(int byte_read, char *buffer);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strdup(const char *s);

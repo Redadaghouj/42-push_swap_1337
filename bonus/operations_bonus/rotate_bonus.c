@@ -1,46 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 10:38:25 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 11:47:24 by mdaghouj         ###   ########.fr       */
+/*   Created: 2025/02/05 10:37:46 by mdaghouj          #+#    #+#             */
+/*   Updated: 2025/02/17 12:57:58 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
-int	reverse_rotate(t_stack **stack)
+int	rotate(t_stack **stack)
 {
+	t_stack	*ptr;
 	t_stack	*last;
-	t_stack	*before_last;
 
 	if (!*stack)
 		return (0);
+	ptr = *stack;
+	*stack = (*stack)->next;
 	last = ft_lstlast(*stack);
-	before_last = ft_lstbefore_last(*stack);
-	last->next = *stack;
-	*stack = last;
-	before_last->next = NULL;
+	last->next = ptr;
+	ptr->next = NULL;
 	return (1);
 }
 
-void	rra(t_stack **stack_a)
+void	ra(t_stack **stack_a)
 {
-	if (reverse_rotate(stack_a))
-		ft_putstr_fd("rra\n", 1);
+	rotate(stack_a);
 }
 
-void	rrb(t_stack **stack_b)
+void	rb(t_stack **stack_b)
 {
-	if (reverse_rotate(stack_b))
-		ft_putstr_fd("rrb\n", 1);
+	rotate(stack_b);
 }
 
-void	rrr(t_stack **stack_a, t_stack **stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	rra(stack_a);
-	rrb(stack_b);
+	ra(stack_a);
+	ra(stack_b);
 }

@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:32:27 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 11:47:41 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:15:16 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
 int	swap(t_stack **stack)
 {
 	int	tmp;
 
-	if (!(*stack)->next)
+	if (!(stack) || !*stack || !(*stack)->next)
 		return (0);
 	tmp = (*stack)->data;
 	(*stack)->data = (*stack)->next->data;
@@ -26,14 +26,12 @@ int	swap(t_stack **stack)
 
 void	sa(t_stack **stack_a)
 {
-	if (swap(stack_a))
-		ft_putstr_fd("sa\n", 1);
+	swap(stack_a);
 }
 
 void	sb(t_stack **stack_b)
 {
-	if (swap(stack_b))
-		ft_putstr_fd("sb\n", 1);
+	swap(stack_b);
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)

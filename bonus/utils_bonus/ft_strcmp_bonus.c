@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 10:37:07 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 11:46:38 by mdaghouj         ###   ########.fr       */
+/*   Created: 2025/02/17 17:14:12 by mdaghouj          #+#    #+#             */
+/*   Updated: 2025/02/17 17:14:40 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
-int	push(t_stack **from, t_stack **to)
+int	ft_strcmp(char *s1, char *s2)
 {
-	t_stack	*ptr;
+	int	i;
 
-	if (!*from)
-		return (0);
-	ptr = *from;
-	*from = (*from)->next;
-	ptr->next = *to;
-	*to = ptr;
-	return (1);
-}
-
-void	pa(t_stack **stack_a, t_stack **stack_b)
-{
-	if (push(stack_b, stack_a))
-		ft_putstr_fd("pa\n", 1);
-}
-
-void	pb(t_stack **stack_a, t_stack **stack_b)
-{
-	if (push(stack_a, stack_b))
-		ft_putstr_fd("pb\n", 1);
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

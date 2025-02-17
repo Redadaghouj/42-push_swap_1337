@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 10:37:07 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 11:46:38 by mdaghouj         ###   ########.fr       */
+/*   Created: 2024/10/25 11:17:44 by mdaghouj          #+#    #+#             */
+/*   Updated: 2025/02/17 12:50:22 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
-int	push(t_stack **from, t_stack **to)
+t_stack	*ft_lstnew(int value)
 {
-	t_stack	*ptr;
+	t_stack	*node;
 
-	if (!*from)
-		return (0);
-	ptr = *from;
-	*from = (*from)->next;
-	ptr->next = *to;
-	*to = ptr;
-	return (1);
-}
-
-void	pa(t_stack **stack_a, t_stack **stack_b)
-{
-	if (push(stack_b, stack_a))
-		ft_putstr_fd("pa\n", 1);
-}
-
-void	pb(t_stack **stack_a, t_stack **stack_b)
-{
-	if (push(stack_a, stack_b))
-		ft_putstr_fd("pb\n", 1);
+	node = (t_stack *) malloc(sizeof(t_stack));
+	if (!node)
+		return (NULL);
+	node->data = value;
+	node->next = NULL;
+	return (node);
 }
