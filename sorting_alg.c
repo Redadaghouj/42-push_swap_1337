@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 18:15:21 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 11:46:16 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 22:50:42 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,5 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	else if (len == 5)
 		sort_five(stack_a, stack_b);
 	else
-		puts("Best move");
+		range_sort(stack_a, stack_b);
 }

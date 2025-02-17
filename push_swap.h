@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 18:41:53 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 22:52:11 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_stack
 {
 	int				data;
+	int				index;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -63,5 +64,9 @@ void		sort_stack(t_stack **stack_a, t_stack **stack_b);
 void		free_and_exit(t_stack **stack);
 void		error_msg(void);
 int			ft_atoi(const char *nptr);
+void		set_index(t_stack **stack, t_stack *node);
+void		range_sort(t_stack **stack_a, t_stack **stack_b);
+void		apply_range_sort(t_stack **stack_a, t_stack **stack_b, int range_min, int range_max);
+void		move_to_top(t_stack **stack, t_stack *biggest_node, int position);
 
 #endif

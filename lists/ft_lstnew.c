@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 11:17:44 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/15 17:29:15 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/17 21:58:11 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack	*ft_lstnew(int value)
 	if (!node)
 		return (NULL);
 	node->data = value;
+	node->index = 0;
 	node->next = NULL;
 	return (node);
 }

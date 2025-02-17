@@ -1,5 +1,5 @@
 CC := cc
-CFLAGS := -Wextra -Wall -Werror
+CFLAGS := -Wextra -Wall -Werror -w
 
 NAME := push_swap
 
@@ -20,7 +20,7 @@ SRCS := push_swap.c utils/ft_split.c utils/ft_putstr_fd.c \
 	lists/ft_lstclear.c lists/ft_lstlast.c lists/ft_lstbefore_last.c \
 	lists/ft_lstnew.c parsing.c operations/swap.c operations/push.c \
 	operations/rotate.c operations/reverse_rotate.c push_swap_utils.c \
-	sorting_alg.c lists/ft_lstsize.c
+	sorting_alg.c lists/ft_lstsize.c range_sort.c
 
 BONUS := bonus/parsing_bonus.c bonus/checker_bonus.c bonus/checker_utils_bonus.c \
 	bonus/status_exit_bonus.c ${UTILS_DIR}/ft_split_bonus.c ${UTILS_DIR}/ft_putstr_fd_bonus.c \
