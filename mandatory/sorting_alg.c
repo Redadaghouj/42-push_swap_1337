@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 18:15:21 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 17:24:09 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:44:31 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	move_min_to_top(t_stack **stack)
 		else
 			ra(stack);
 	}
-	
 }
 
 void	sort_three(t_stack **stack)
