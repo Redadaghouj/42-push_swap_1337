@@ -1,7 +1,3 @@
-Here's a structured **README** for your **push_swap** project:  
-
----
-
 # push_swap - 1337 Project  
 
 [![1337 Badge](https://img.shields.io/badge/1337-Project-blue)](https://www.42network.org/)  
