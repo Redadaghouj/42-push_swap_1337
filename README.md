@@ -47,7 +47,7 @@
 │   ├── checker_bonus.h
 │   ├── checker_utils_bonus.c
 │   ├── parsing_bonus.c
-│   ├── status_exit_bonus.c
+│   └── status_exit_bonus.c
 │
 ├── 📂 mandatory
 │   ├── 📂 lists
@@ -72,7 +72,7 @@
 │   ├── push_swap_utils.c
 │   ├── push_swap.c
 │   ├── push_swap.h
-│   ├── range_sort.c
+│   └── range_sort.c
 │
 └── Makefile
 ```  
