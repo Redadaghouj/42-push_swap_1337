@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:38:25 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 15:48:55 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:45:27 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	reverse_rotate(t_stack **stack)
 	t_stack	*last;
 	t_stack	*before_last;
 
-	if (!*stack)
+	if (!*stack || !(*stack)->next)
 		return (0);
 	last = ft_lstlast(*stack);
 	before_last = ft_lstbefore_last(*stack);

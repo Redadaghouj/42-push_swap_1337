@@ -15,12 +15,14 @@ UTILS_DIR := bonus/utils_bonus
 
 OP_DIR := bonus/operations_bonus
 
-SRCS := push_swap.c utils/ft_split.c utils/ft_putstr_fd.c \
-	utils/ft_strlen.c utils/ft_atoi.c lists/ft_lstadd_back.c \
-	lists/ft_lstclear.c lists/ft_lstlast.c lists/ft_lstbefore_last.c \
-	lists/ft_lstnew.c parsing.c operations/swap.c operations/push.c \
-	operations/rotate.c operations/reverse_rotate.c push_swap_utils.c \
-	sorting_alg.c lists/ft_lstsize.c range_sort.c
+MANDO := mandatory
+
+SRCS := ${MANDO}/push_swap.c ${MANDO}/push_swap_utils.c ${MANDO}/sorting_alg.c ${MANDO}/range_sort.c \
+	${MANDO}/parsing.c ${MANDO}/utils/ft_split.c ${MANDO}/utils/ft_putstr_fd.c \
+	${MANDO}/utils/ft_strlen.c ${MANDO}/utils/ft_atoi.c ${MANDO}/lists/ft_lstadd_back.c \
+	${MANDO}/lists/ft_lstclear.c ${MANDO}/lists/ft_lstlast.c ${MANDO}/lists/ft_lstbefore_last.c \
+	${MANDO}/lists/ft_lstnew.c ${MANDO}/lists/ft_lstsize.c ${MANDO}/operations/swap.c \
+	${MANDO}/operations/push.c ${MANDO}/operations/rotate.c ${MANDO}/operations/reverse_rotate.c
 
 BONUS := bonus/parsing_bonus.c bonus/checker_bonus.c bonus/checker_utils_bonus.c \
 	bonus/status_exit_bonus.c ${UTILS_DIR}/ft_split_bonus.c ${UTILS_DIR}/ft_putstr_fd_bonus.c \
