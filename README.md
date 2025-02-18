@@ -43,35 +43,38 @@
 │   │   ├── ft_putstr_fd_bonus.c
 │   │   ├── ft_split_bonus.c
 │   │   ├── ft_strcmp_bonus.c
-│   │   ├── checker_bonus.c
-│   │   ├── checker_bonus.h
-│   │   ├── checker_utils_bonus.c
-│   │   ├── parsing_bonus.c
-│   │   ├── status_exit_bonus.c
-├── 📂 lists
-│   ├── ft_lstadd_back.c
-│   ├── ft_lstbefore_last.c
-│   ├── ft_lstclear.c
-│   ├── ft_lstlast.c
-│   ├── ft_lstnew.c
-│   ├── ft_lstsize.c
-├── 📂 operations
-│   ├── push.c
-│   ├── reverse_rotate.c
-│   ├── rotate.c
-│   ├── swap.c
-├── 📂 utils
-│   ├── ft_atoi.c
-│   ├── ft_putstr_fd.c
-│   ├── ft_split.c
-│   ├── ft_strlen.c
-├── Makefile
-├── parsing.c
-├── push_swap_utils.c
-├── push_swap.c
-├── push_swap.h
-├── range_sort.c
-└── sorting_alg.c
+│   ├── checker_bonus.c
+│   ├── checker_bonus.h
+│   ├── checker_utils_bonus.c
+│   ├── parsing_bonus.c
+│   └── status_exit_bonus.c
+│
+├── 📂 mandatory
+│   ├── 📂 lists
+│   │   ├── ft_lstadd_back.c
+│   │   ├── ft_lstbefore_last.c
+│   │   ├── ft_lstclear.c
+│   │   ├── ft_lstlast.c
+│   │   ├── ft_lstnew.c
+│   │   ├── ft_lstsize.c
+│   ├── 📂 operations
+│   │   ├── push.c
+│   │   ├── reverse_rotate.c
+│   │   ├── rotate.c
+│   │   ├── swap.c
+│   ├── 📂 utils
+│   │   ├── ft_atoi.c
+│   │   ├── ft_putstr_fd.c
+│   │   ├── ft_split.c
+│   │   ├── ft_strlen.c
+│   ├── sorting_alg.c
+│   ├── parsing.c
+│   ├── push_swap_utils.c
+│   ├── push_swap.c
+│   ├── push_swap.h
+│   └── range_sort.c
+│
+└── Makefile
 ```  
 
 ---
