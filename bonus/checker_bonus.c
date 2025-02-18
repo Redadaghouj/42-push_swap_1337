@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 15:49:35 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:43:09 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ void	push_num_to_stack(int num, t_stack **stack_a)
 
 void	wrong_operation(t_stack **stack_a, t_stack **stack_b)
 {
-	if (*stack_a)
-		ft_lstclear(stack_a);
-	if (*stack_b)
-		ft_lstclear(stack_b);
+	ft_lstclear(stack_a);
+	ft_lstclear(stack_b);
 	error_msg();
 }
 

@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 17:12:00 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 15:49:50 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:42:58 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,14 @@ void	result_msg(char *msg, int fd, int exit_code)
 
 void	failure_exit(t_stack **stack_a, t_stack **stack_b)
 {
-	if (*stack_b)
-		ft_lstclear(stack_b);
 	ft_lstclear(stack_a);
+	ft_lstclear(stack_b);
 	result_msg("KO\n", 2, 1);
 }
 
 void	success_exit(t_stack **stack_a, t_stack **stack_b)
 {
-	if (*stack_b)
-		ft_lstclear(stack_b);
 	ft_lstclear(stack_a);
+	ft_lstclear(stack_b);
 	result_msg("OK\n", 1, 0);
 }
