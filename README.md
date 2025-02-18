@@ -48,8 +48,8 @@
 │   ├── checker_utils_bonus.c
 │   ├── parsing_bonus.c
 │   ├── status_exit_bonus.c
+│
 ├── 📂 mandatory
-│   │
 │   ├── 📂 lists
 │   │   ├── ft_lstadd_back.c
 │   │   ├── ft_lstbefore_last.c
@@ -73,6 +73,7 @@
 │   ├── push_swap.c
 │   ├── push_swap.h
 │   ├── range_sort.c
+│
 └── Makefile
 ```  
 
