@@ -169,7 +169,8 @@ KO
 
 - Rejects **non-numeric** arguments.  
 - Rejects **duplicate numbers**.  
-- Rejects **out-of-range** integers (greater than `INT_MAX` or less than `INT_MIN`).  
+- Rejects **out-of-range** integers (greater than `INT_MAX` or less than `INT_MIN`).
+- Rejects **empty input argument**.
 
 ---
 
