@@ -6,11 +6,11 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 18:48:11 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:49:35 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "checker_bonus.h"
 
 void	push_num_to_stack(int num, t_stack **stack_a)
 {
@@ -22,7 +22,7 @@ void	push_num_to_stack(int num, t_stack **stack_a)
 	ft_lstadd_back(stack_a, node);
 }
 
-void	apply_operations_exit(t_stack **stack_a, t_stack **stack_b)
+void	wrong_operation(t_stack **stack_a, t_stack **stack_b)
 {
 	if (*stack_a)
 		ft_lstclear(stack_a);
@@ -56,7 +56,7 @@ void	apply_operations(t_stack **stack_a, t_stack **stack_b, char *opr)
 	else if (ft_strcmp(opr, "rrr\n") == 0)
 		rrr(stack_a, stack_b);
 	else
-		apply_operations_exit(stack_a, stack_b);
+		wrong_operation(stack_a, stack_b);
 }
 
 int	main(int argc, char *argv[])

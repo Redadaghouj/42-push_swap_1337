@@ -6,11 +6,11 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:14:54 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 18:47:41 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:49:41 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "checker_bonus.h"
 
 int	is_sorted_bonus(t_stack *stack_a, t_stack *stack_b)
 {

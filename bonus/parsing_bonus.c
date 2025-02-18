@@ -6,11 +6,11 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:55:04 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 13:53:40 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:49:46 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "checker_bonus.h"
 
 int	is_only_spaces(char *str)
 {
@@ -35,7 +35,8 @@ int	is_digit(char *str)
 	{
 		if (str[i] == '-' || str[i] == '+')
 		{
-			if (((i - 1) != -1 && str[i - 1] != ' ') || str[i + 1] == ' ')
+			if (((i - 1) != -1 && str[i - 1] != ' ')
+				|| ((i + 1) <= ft_strlen(str) && str[i + 1] == ' '))
 				return (0);
 			i++;
 		}

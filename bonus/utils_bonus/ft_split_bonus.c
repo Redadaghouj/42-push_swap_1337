@@ -6,11 +6,11 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:17:42 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 12:52:35 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:49:22 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap_bonus.h"
+#include "../checker_bonus.h"
 
 void	*free_buffer(char **buffer, int len)
 {

@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 18:48:30 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:47:30 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_BONUS_H
-# define PUSH_SWAP_BONUS_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-# include <stdio.h> //-REMOVE-
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h> // CHECK: if i use it
 # include "gnl_bonus/get_next_line_bonus.h"
 
 typedef struct s_stack

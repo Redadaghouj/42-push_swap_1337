@@ -6,17 +6,15 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 22:52:11 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:41:54 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h> //-REMOVE-
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h> // CHECK: if i use it
 
 typedef struct s_stack
 {
@@ -37,7 +35,6 @@ int			ft_lstsize(t_stack *lst);
 t_stack		*ft_lstlast(t_stack *lst);
 t_stack		*ft_lstnew(int value);
 t_stack		*ft_lstbefore_last(t_stack *lst);
-void		print_list(t_stack *stack_a);
 int			swap(t_stack **stack);
 void		ft_putstr_fd(char *str, int fd);
 void		sa(t_stack **stack_a);
@@ -66,7 +63,8 @@ void		error_msg(void);
 int			ft_atoi(const char *nptr);
 void		set_index(t_stack **stack, t_stack *node);
 void		range_sort(t_stack **stack_a, t_stack **stack_b);
-void		apply_range_sort(t_stack **stack_a, t_stack **stack_b, int range_min, int range_max);
+void		range_push(t_stack **stack_a, t_stack **stack_b, int min, int max);
 void		move_to_top(t_stack **stack, t_stack *biggest_node, int position);
+int			get_biggest_position(t_stack *stack, int biggest);
 
 #endif

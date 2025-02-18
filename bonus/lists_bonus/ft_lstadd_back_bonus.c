@@ -6,11 +6,11 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 23:25:49 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 12:55:11 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:47:44 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap_bonus.h"
+#include "../checker_bonus.h"
 
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {

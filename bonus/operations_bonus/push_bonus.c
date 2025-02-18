@@ -6,11 +6,11 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:37:07 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 12:43:12 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:48:50 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap_bonus.h"
+#include "../checker_bonus.h"
 
 int	push(t_stack **from, t_stack **to)
 {

@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 13:47:01 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:37:39 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,6 @@ void	push_num_to_stack(int num, t_stack **stack_a)
 		free_and_exit(stack_a);
 	set_index(stack_a, node);
 	ft_lstadd_back(stack_a, node);
-}
-
-// -REMOVE-
-void	print_list(t_stack *stack_a)
-{
-	while (stack_a != NULL)
-	{
-		printf("%d\n", stack_a->data);
-		stack_a = stack_a->next;
-	}
 }
 
 void	set_index(t_stack **stack, t_stack *node)
@@ -72,5 +62,3 @@ int	main(int argc, char *argv[])
 	sort_stack(&stack_a, &stack_b);
 	return (0);
 }
-// 0 - 15 --> 5 - 100 elements
-// 0 - 35 --> +101 elements

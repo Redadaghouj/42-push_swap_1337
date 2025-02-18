@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:24:31 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 17:05:44 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:44:45 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	check_line(int bytes_read, char *buffer)
 	return (-1);
 }
 
-size_t	ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (s && s[i] != '\0')
@@ -83,7 +83,7 @@ char	*ft_substr(const char *s, unsigned int start, int len)
 	int		i;
 	char	*str;
 
-	if (!s || start >= ft_strlen(s))
+	if (!s || start >= (unsigned int)ft_strlen(s))
 		return (NULL);
 	str = (char *) malloc(len * sizeof(char) + 1);
 	if (!str)
