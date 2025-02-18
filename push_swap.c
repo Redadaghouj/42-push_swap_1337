@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/17 22:09:43 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/18 13:47:01 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	sort_stack(&stack_a, &stack_b);
-	print_list(stack_a);
 	return (0);
 }
 // 0 - 15 --> 5 - 100 elements
