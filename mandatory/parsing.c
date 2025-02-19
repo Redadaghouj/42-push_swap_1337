@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:55:04 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 15:28:11 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/19 17:47:09 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,23 +48,18 @@ int	is_digit(char *str)
 	return (1);
 }
 
-void	check_duplicated(t_stack **stack)
+int	is_duplicated(t_stack **stack, int num)
 {
-	t_stack	*iterate;
 	t_stack	*ptr;
 
 	ptr = *stack;
 	while (ptr != NULL)
 	{
-		iterate = ptr->next;
-		while (iterate != NULL)
-		{
-			if (ptr->data == iterate->data)
-				free_and_exit(stack);
-			iterate = iterate->next;
-		}
+		if (ptr->data == num)
+			return (1);
 		ptr = ptr->next;
 	}
+	return (0);
 }
 
 void	load_stack(int argc, char *argv[], t_stack **stack)
@@ -83,9 +78,15 @@ void	load_stack(int argc, char *argv[], t_stack **stack)
 		if (!buffer)
 			free_and_exit(stack);
 		while (buffer[j] != NULL)
+		{
+			if (is_duplicated(stack, ft_atoi(buffer[j])))
+			{
+				free_buffer(buffer, j);
+				free_and_exit(stack);
+			}
 			push_num_to_stack(ft_atoi(buffer[j++]), stack);
+		}
 		free_buffer(buffer, j);
 		i++;
 	}
-	check_duplicated(stack);
 }

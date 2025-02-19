@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 15:41:54 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/19 17:47:13 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		*free_buffer(char **buffer, int len);
 int			ft_strlen(const char *s);
 int			is_only_spaces(char *str);
 int			is_digit(char *str);
-void		check_duplicated(t_stack **stack);
+int			is_duplicated(t_stack **stack, int num);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstclear(t_stack **lst);
 int			ft_lstsize(t_stack *lst);
