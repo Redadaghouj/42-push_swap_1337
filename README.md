@@ -164,7 +164,7 @@ KO
 
 - **3 Numbers:** Uses minimal swaps and rotations.  
 - **5 Numbers:** Uses `pb` to move two smallest elements and sorts the remaining stack.  
-- **100+ Numbers:** Implements **range-based logic** for efficient sorting as described in [this article](https://medium.com/@abdelhadi-salah/push-swap-42-e0abfe0e0fef)..  
+- **100+ Numbers:** Implements **range-based logic** for efficient sorting as described in [this article](https://medium.com/@abdelhadi-salah/push-swap-42-e0abfe0e0fef).
 
 ---
 
