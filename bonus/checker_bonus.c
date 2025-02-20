@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/20 18:19:56 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/20 18:42:07 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int	main(int argc, char *argv[])
 	while (operation)
 	{
 		apply_operations(&stack_a, &stack_b, operation);
+		free(operation);
 		operation = get_next_line(0);
 	}
 	if (stack_b != NULL && is_sorted(stack_a))

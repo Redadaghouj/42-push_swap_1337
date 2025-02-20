@@ -1,4 +1,5 @@
 CC := cc
+
 CFLAGS := -Wextra -Wall -Werror
 
 NAME := push_swap
@@ -52,7 +53,7 @@ ${NAME}: ${OBJ}
 %.o: %.c push_swap.h
 	${CC} ${CFLAGS} -c $< -o $@
 
-bonus/%.o: bonus/%.c bonus/push_swap_bonus.h
+bonus/%.o: bonus/%.c bonus/checker_bonus.h
 	${CC} ${CFLAGS} -c $< -o $@
 
 bonus: ${NAME_BONUS}

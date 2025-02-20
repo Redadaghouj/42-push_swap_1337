@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:55:04 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/19 17:48:55 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/20 18:40:24 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,13 @@ int	is_digit(char *str)
 	return (1);
 }
 
-int	is_duplicated(t_stack **stack, int num)
+int	is_duplicated(t_stack *stack, int num)
 {
-	t_stack	*ptr;
-
-	ptr = *stack;
-	while (ptr != NULL)
+	while (stack != NULL)
 	{
-		if (ptr->data == num)
+		if (stack->data == num)
 			return (1);
-		ptr = ptr->next;
+		stack = stack->next;
 	}
 	return (0);
 }
@@ -79,7 +76,7 @@ void	load_stack(int argc, char *argv[], t_stack **stack)
 			free_and_exit(stack);
 		while (buffer[j] != NULL)
 		{
-			if (is_duplicated(stack, ft_atoi(buffer[j])))
+			if (is_duplicated(*stack, ft_atoi(buffer[j])))
 			{
 				free_buffer(buffer, j);
 				free_and_exit(stack);
