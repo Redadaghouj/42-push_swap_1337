@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/20 11:15:12 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/20 11:38:54 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_stack
 }					t_stack;
 
 # define EXIT_FAILURE 1
+# define STD_ERROR 2
 
 char		**ft_split(char const *s, char c);
 void		*free_buffer(char **buffer, int len);

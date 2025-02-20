@@ -7,30 +7,36 @@ NAME_BONUS := checker
 
 RM := rm -f
 
-GNL_DIR := bonus/gnl_bonus
+GNL_BNS := bonus/gnl_bonus
 
-LISTS_DIR := bonus/lists_bonus
+LISTS_BNS := bonus/lists_bonus
 
-UTILS_DIR := bonus/utils_bonus
+UTILS_BNS := bonus/utils_bonus
 
-OP_DIR := bonus/operations_bonus
+OPERATIONS_BNS := bonus/operations_bonus
 
 MANDO := mandatory
 
+UTILS := mandatory/utils
+
+LISTS := mandatory/lists
+
+OPERATIONS := mandatory/operations
+
 SRCS := ${MANDO}/push_swap.c ${MANDO}/push_swap_utils.c ${MANDO}/sorting_alg.c ${MANDO}/range_sort.c \
-	${MANDO}/parsing.c ${MANDO}/utils/ft_split.c ${MANDO}/utils/ft_putstr_fd.c \
-	${MANDO}/utils/ft_strlen.c ${MANDO}/utils/ft_atoi.c ${MANDO}/lists/ft_lstadd_back.c \
-	${MANDO}/lists/ft_lstclear.c ${MANDO}/lists/ft_lstlast.c ${MANDO}/lists/ft_lstbefore_last.c \
-	${MANDO}/lists/ft_lstnew.c ${MANDO}/lists/ft_lstsize.c ${MANDO}/operations/swap.c \
-	${MANDO}/operations/push.c ${MANDO}/operations/rotate.c ${MANDO}/operations/reverse_rotate.c
+	${MANDO}/parsing.c ${UTILS}/ft_split.c ${UTILS}/ft_putstr_fd.c \
+	${UTILS}/ft_strlen.c ${UTILS}/ft_atoi.c ${LISTS}/ft_lstadd_back.c \
+	${LISTS}/ft_lstclear.c ${LISTS}/ft_lstlast.c ${LISTS}/ft_lstbefore_last.c \
+	${LISTS}/ft_lstnew.c ${LISTS}/ft_lstsize.c ${OPERATIONS}/swap.c \
+	${OPERATIONS}/push.c ${OPERATIONS}/rotate.c ${OPERATIONS}/reverse_rotate.c
 
 BONUS := bonus/parsing_bonus.c bonus/checker_bonus.c bonus/checker_utils_bonus.c \
-	bonus/status_exit_bonus.c ${UTILS_DIR}/ft_split_bonus.c ${UTILS_DIR}/ft_putstr_fd_bonus.c \
-	${UTILS_DIR}/ft_atoi_bonus.c ${UTILS_DIR}/ft_strcmp_bonus.c ${LISTS_DIR}/ft_lstadd_back_bonus.c \
-	${LISTS_DIR}/ft_lstclear_bonus.c ${LISTS_DIR}/ft_lstlast_bonus.c ${LISTS_DIR}/ft_lstbefore_last_bonus.c \
-	${LISTS_DIR}/ft_lstnew_bonus.c ${LISTS_DIR}/ft_lstsize_bonus.c ${OP_DIR}/swap_bonus.c \
-	${OP_DIR}/push_bonus.c ${OP_DIR}/rotate_bonus.c ${OP_DIR}/reverse_rotate_bonus.c \
-	${GNL_DIR}/get_next_line_utils_bonus.c ${GNL_DIR}/get_next_line_bonus.c
+	bonus/status_exit_bonus.c ${UTILS_BNS}/ft_split_bonus.c ${UTILS_BNS}/ft_putstr_fd_bonus.c \
+	${UTILS_BNS}/ft_atoi_bonus.c ${UTILS_BNS}/ft_strcmp_bonus.c ${LISTS_BNS}/ft_lstadd_back_bonus.c \
+	${LISTS_BNS}/ft_lstclear_bonus.c ${LISTS_BNS}/ft_lstlast_bonus.c ${LISTS_BNS}/ft_lstbefore_last_bonus.c \
+	${LISTS_BNS}/ft_lstnew_bonus.c ${LISTS_BNS}/ft_lstsize_bonus.c ${OPERATIONS_BNS}/swap_bonus.c \
+	${OPERATIONS_BNS}/push_bonus.c ${OPERATIONS_BNS}/rotate_bonus.c ${OPERATIONS_BNS}/reverse_rotate_bonus.c \
+	${GNL_BNS}/get_next_line_utils_bonus.c ${GNL_BNS}/get_next_line_bonus.c
 
 OBJ := ${SRCS:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 17:12:00 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/20 11:13:25 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/20 11:41:07 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error_msg(void)
 {
-	ft_putstr_fd("Error\n", 2);
+	ft_putstr_fd("Error\n", STD_ERROR);
 	exit(EXIT_FAILURE);
 }
 

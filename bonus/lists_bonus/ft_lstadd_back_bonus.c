@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 23:25:49 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 15:47:44 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/20 11:40:50 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 		return ;
 	if (*lst == NULL)
 		*lst = new;
-	else
 	{
 		last = ft_lstlast(*lst);
 		last->next = new;
