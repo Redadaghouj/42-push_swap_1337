@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/20 11:40:39 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/20 18:13:48 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void		free_and_exit(t_stack **stack);
 void		error_msg(void);
 int			ft_atoi(const char *nptr);
 void		apply_operations(t_stack **stack_a, t_stack **stack_b, char *opr);
-int			is_sorted_bonus(t_stack *stack_a, t_stack *stack_b);
 void		failure_exit(t_stack **stack_a, t_stack **stack_b);
 void		success_exit(t_stack **stack_a, t_stack **stack_b);
 int			ft_strcmp(char *s1, char *s2);

@@ -6,24 +6,11 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:14:54 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 15:49:41 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:56:59 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-
-int	is_sorted_bonus(t_stack *stack_a, t_stack *stack_b)
-{
-	if (stack_b != NULL)
-		return (0);
-	while (stack_a->next != NULL)
-	{
-		if (stack_a->data > stack_a->next->data)
-			return (0);
-		stack_a = stack_a->next;
-	}
-	return (1);
-}
 
 int	is_sorted(t_stack *stack)
 {

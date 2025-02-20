@@ -7,6 +7,8 @@ NAME_BONUS := checker
 
 RM := rm -f
 
+BNS := bonus
+
 GNL_BNS := bonus/gnl_bonus
 
 LISTS_BNS := bonus/lists_bonus
@@ -30,8 +32,8 @@ SRCS := ${MANDO}/push_swap.c ${MANDO}/push_swap_utils.c ${MANDO}/sorting_alg.c $
 	${LISTS}/ft_lstnew.c ${LISTS}/ft_lstsize.c ${OPERATIONS}/swap.c \
 	${OPERATIONS}/push.c ${OPERATIONS}/rotate.c ${OPERATIONS}/reverse_rotate.c
 
-BONUS := bonus/parsing_bonus.c bonus/checker_bonus.c bonus/checker_utils_bonus.c \
-	bonus/status_exit_bonus.c ${UTILS_BNS}/ft_split_bonus.c ${UTILS_BNS}/ft_putstr_fd_bonus.c \
+BONUS := ${BNS}/parsing_bonus.c ${BNS}/checker_bonus.c ${BNS}/checker_utils_bonus.c \
+	${BNS}/status_exit_bonus.c ${UTILS_BNS}/ft_split_bonus.c ${UTILS_BNS}/ft_putstr_fd_bonus.c \
 	${UTILS_BNS}/ft_atoi_bonus.c ${UTILS_BNS}/ft_strcmp_bonus.c ${LISTS_BNS}/ft_lstadd_back_bonus.c \
 	${LISTS_BNS}/ft_lstclear_bonus.c ${LISTS_BNS}/ft_lstlast_bonus.c ${LISTS_BNS}/ft_lstbefore_last_bonus.c \
 	${LISTS_BNS}/ft_lstnew_bonus.c ${LISTS_BNS}/ft_lstsize_bonus.c ${OPERATIONS_BNS}/swap_bonus.c \
@@ -65,5 +67,7 @@ fclean: clean
 	@${RM} ${NAME} ${NAME_BONUS}
 
 re: fclean all
+
+rebonus: fclean bonus
 
 .PHONY: all clean fclean re

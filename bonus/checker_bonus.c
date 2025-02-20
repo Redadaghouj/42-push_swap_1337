@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:24:12 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/18 17:43:09 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/02/20 18:19:56 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int argc, char *argv[])
 		apply_operations(&stack_a, &stack_b, operation);
 		operation = get_next_line(0);
 	}
-	if (is_sorted_bonus(stack_a, stack_b))
+	if (stack_b != NULL && is_sorted(stack_a))
 		success_exit(&stack_a, &stack_b);
 	else
 		failure_exit(&stack_a, &stack_b);
