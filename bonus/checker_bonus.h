@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/20 18:39:50 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/03/03 15:35:19 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_stack
 # define EXIT_SUCCESS 0
 
 char		**ft_split(char const *s, char c);
-void		*free_buffer(char **buffer, int len);
+void		*free_buffer(char **buffer);
 int			is_only_spaces(char *str);
 int			is_digit(char *str);
 int			is_duplicated(t_stack *stack, int num);

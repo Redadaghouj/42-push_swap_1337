@@ -6,18 +6,18 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:17:42 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/11 11:51:51 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/03/03 15:36:06 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	*free_buffer(char **buffer, int len)
+void	*free_buffer(char **buffer)
 {
 	int	i;
 
 	i = 0;
-	while (i < len)
+	while (buffer[i] != NULL)
 	{
 		free(buffer[i]);
 		i++;
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 		{
 			buffer[i] = extract_word(s, c);
 			if (!buffer[i])
-				return (free_buffer(buffer, i));
+				return (free_buffer(buffer));
 			s += ft_strlen(buffer[i]);
 			i++;
 		}

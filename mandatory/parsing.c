@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:55:04 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/20 18:39:40 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/03/03 15:36:33 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	is_digit(char *str)
 		if (str[i] == '-' || str[i] == '+')
 		{
 			if (((i - 1) != -1 && str[i - 1] != ' ')
-				|| ((i + 1) <= ft_strlen(str) && str[i + 1] == ' '))
+				|| str[i + 1] == ' ' || str[i + 1] == '\0')
 				return (0);
 			i++;
 		}
@@ -78,12 +78,12 @@ void	load_stack(int argc, char *argv[], t_stack **stack)
 		{
 			if (is_duplicated(*stack, ft_atoi(buffer[j])))
 			{
-				free_buffer(buffer, j);
+				free_buffer(buffer);
 				free_and_exit(stack);
 			}
 			push_num_to_stack(ft_atoi(buffer[j++]), stack);
 		}
-		free_buffer(buffer, j);
+		free_buffer(buffer);
 		i++;
 	}
 }

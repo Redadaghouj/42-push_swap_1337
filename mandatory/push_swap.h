@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:28:28 by mdaghouj          #+#    #+#             */
-/*   Updated: 2025/02/20 18:39:34 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2025/03/03 15:36:21 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack
 # define STD_ERROR 2
 
 char		**ft_split(char const *s, char c);
-void		*free_buffer(char **buffer, int len);
+void		*free_buffer(char **buffer);
 int			ft_strlen(const char *s);
 int			is_only_spaces(char *str);
 int			is_digit(char *str);

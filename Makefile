@@ -53,7 +53,7 @@ ${NAME}: ${OBJ}
 %.o: %.c push_swap.h
 	${CC} ${CFLAGS} -c $< -o $@
 
-bonus/%.o: bonus/%.c bonus/checker_bonus.h
+bonus/%.o: ${BNS}/%.c ${BNS}/checker_bonus.h ${GNL_BNS}/get_next_line_bonus.h
 	${CC} ${CFLAGS} -c $< -o $@
 
 bonus: ${NAME_BONUS}
