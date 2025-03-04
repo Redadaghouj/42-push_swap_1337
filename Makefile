@@ -47,18 +47,18 @@ OBJ_BONUS := ${BONUS:.c=.o}
 
 all: ${NAME}
 
-${NAME}: ${OBJ}
+${NAME}: ${OBJ} ${MANDO}/push_swap.h
 	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
 
-%.o: %.c push_swap.h
+%.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
-bonus/%.o: ${BNS}/%.c ${BNS}/checker_bonus.h ${GNL_BNS}/get_next_line_bonus.h
+bonus/%.o: ${BNS}/%.c
 	${CC} ${CFLAGS} -c $< -o $@
 
 bonus: ${NAME_BONUS}
 
-${NAME_BONUS}: ${OBJ_BONUS} 
+${NAME_BONUS}: ${OBJ_BONUS} ${BNS}/checker_bonus.h ${GNL_BNS}/get_next_line_bonus.h
 	${CC} ${CFLAGS} ${OBJ_BONUS} -o ${NAME_BONUS}
 
 clean:
